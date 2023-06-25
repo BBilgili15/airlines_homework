@@ -1,8 +1,9 @@
 package com.codeclan.example;
 
-public enum CrewMemberTypes {
+public enum CrewMemberType {
     FLIGHT_ATTENDANT,
     LEAD_ATTENDANT,
     FIRST_OFFICER,
-    CAPTAIN;
+    CAPTAIN,
+    PILOT;
 }
