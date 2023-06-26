@@ -39,21 +39,13 @@ public class Flight {
 
     public int weightRemaining() {
         int bags = 0;
-        int passengerWeight = 0;
+        int peopleWeight = (passengers.size() + pilots.size() + crewMembers.size()) * 70;
         for (Passenger passenger: this.passengers) {
             bags += passenger.bagCount();
-            passengerWeight += 70;
         }
-        int pilotWeight = 0;
-        for (Pilot pilot: this.pilots) {
-            pilotWeight += 70;
-        }
-        int crewWeight = 0;
-        for (CrewMember crewMember: this.crewMembers) {
-            crewWeight += 70;
-        }
+
         int bagWeight = bags * 10;
-        return this.totalWeightAllowance - ( bagWeight + passengerWeight + pilotWeight + crewWeight);
+        return this.totalWeightAllowance - (bagWeight + peopleWeight);
 
     }
 
