@@ -23,22 +23,22 @@ public class FlightTest {
         ArrayList<Pilot> pilots = new ArrayList<>();
         ArrayList<CrewMember> crewMembers = new ArrayList<>();
         ArrayList<Passenger> passengers = new ArrayList<>();
+        flight = new Flight(pilots, crewMembers, passengers, "56712GH", "Dakar", "Paris", 11.50, 1000);
         pilot = new Pilot("Jared", CrewMemberType.PILOT, "3TYU67");
         pilots.add(pilot);
         crewMember = new CrewMember("John", CrewMemberType.LEAD_ATTENDANT);
         crewMembers.add(crewMember);
         crewMember1 = new CrewMember("Jane", CrewMemberType.FLIGHT_ATTENDANT);
         crewMembers.add(crewMember1);
-        passenger = new Passenger("Fred", 1);
-        passengers.add(passenger);
-        passenger1 = new Passenger("Bella", 0);
-        passengers.add(passenger1);
-        passenger2 = new Passenger("Martin", 2);
-        passengers.add(passenger2);
-        passenger3 = new Passenger("Amy", 2);
-        passengers.add(passenger3);
-        passenger4 = new Passenger("Alex", 1);
-        flight = new Flight(pilots, crewMembers, passengers, "56712GH", "Dakar", "Paris", "11.50am", 1000);
+        passenger = new Passenger("Fred", 1, null);
+        flight.bookPassenger(passenger);
+        passenger1 = new Passenger("Bella", 0, null);
+        flight.bookPassenger(passenger1);
+        passenger2 = new Passenger("Martin", 2, null);
+        flight.bookPassenger(passenger2);
+        passenger3 = new Passenger("Amy", 2, null);
+        flight.bookPassenger(passenger3);
+        passenger4 = new Passenger("Alex", 0, null);
     }
 
     @Test

@@ -9,7 +9,7 @@ public class PassengerTest {
 
     @Before
     public void before() {
-        passenger = new Passenger("Albert", 2);
+        passenger = new Passenger("Albert", 2, null);
     }
 
     @Test

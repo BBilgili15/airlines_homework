@@ -9,10 +9,10 @@ public class Flight {
     private String flightNumber;
     private String destination;
     private String departureAirport;
-    private String departureTime;
+    private double departureTime;
     private int totalWeightAllowance;
 
-    public Flight(ArrayList<Pilot> pilots, ArrayList<CrewMember> crewMembers, ArrayList<Passenger> passengers, String flightNumber, String destination, String departureAirport, String departureTime, int totalWeightAllowance) {
+    public Flight(ArrayList<Pilot> pilots, ArrayList<CrewMember> crewMembers, ArrayList<Passenger> passengers, String flightNumber, String destination, String departureAirport, double departureTime, int totalWeightAllowance) {
         this.pilots = pilots;
         this.crewMembers = crewMembers;
         this.passengers = passengers;
@@ -32,7 +32,7 @@ public class Flight {
     }
 
     public void bookPassenger(Passenger passenger) {
-        if (this.passengers.size() < 10) {
+        if (this.weightRemaining() > (passenger.bagCount() * 10 + 70) && this.countAvailableSeats() > 0) {
             this.passengers.add(passenger);
         }
     }

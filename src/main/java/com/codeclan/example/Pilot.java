@@ -1,6 +1,6 @@
 package com.codeclan.example;
 
-public class Pilot extends  Person {
+public class Pilot extends Person {
     private CrewMemberType crewMemberType;
     private String licenseNumber;
 
